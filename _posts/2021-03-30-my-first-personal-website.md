@@ -1,5 +1,6 @@
 ---
 layout: post
+title: "Endarzboy Assefa, Horrible Cop, Launches Site"
 data: 2021-03-30
 ---
 Well. Finally got around to putting this old website together.
