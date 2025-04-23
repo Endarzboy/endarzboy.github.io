@@ -1,15 +1,15 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Maregu Assefa",
+    "email": "maregu.habtie@ku.ac.ae",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://endarzboy.github.io",
+    "summary": "Postdoctoral Fellow at Khalifa University, UAE",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
+      "city": "Abu Dhabi",
+      "countryCode": "UAE",
       "region": ""
     },
     "profiles": [
