@@ -9,7 +9,8 @@ index.md                 ← home page bio + research-interest tags
 _data/publications.yml   ← ALL publications (newest first)
 _news/                   ← one small .md file per news item or event
 _data/projects.yml       ← featured project cards
-_data/cv.yml             ← CV timeline (positions, education, awards, service)
+_data/cv.yml             ← CV page sections
+_data/cv_publications.yml← full publication list on the CV page (generated from your .bib)
 assets/img/              ← profile photo, favicon
 assets/cv/               ← put your CV PDF here
 tools/bib2yml.py         ← BibTeX → publication entry converter
@@ -106,7 +107,8 @@ move to **Past events** automatically. The check runs in the visitor's browser, 
 | CV PDF | Put it in `assets/cv/` and set `cv_pdf: /assets/cv/<file>.pdf` |
 | Bio and interest tags | `index.md` |
 | Featured projects | `_data/projects.yml` (other GitHub repos are listed automatically; hide some with `github_exclude`) |
-| CV timeline | `_data/cv.yml` |
+| CV sections (positions, education, supervision, projects, impact) | `_data/cv.yml` |
+| CV publication list (all papers) | edit `my_CV_latex/cv_publications.bib`, then `python3 tools/bib2cv.py my_CV_latex/cv_publications.bib` |
 | Colours and fonts | Top of `assets/css/main.css` (`--accent`, `--bg`, …; the dark theme is below them) |
 
 ---

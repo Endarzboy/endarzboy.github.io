@@ -15,12 +15,12 @@ timezone: Asia/Dubai
 author:
   name: Maregu Assefa
   pronouns: ""                     # e.g. "he/him" (leave empty to hide)
-  avatar: /assets/img/profile.svg  # replace with /assets/img/profile.jpg
+  avatar: /assets/img/profile.jpg  # square photo, at least 400 px
   title: Postdoctoral Fellow
   affiliation: Khalifa University
   affiliation_url: https://www.ku.ac.ae/
   location: Abu Dhabi, UAE
-  email: ""                        # TODO: your email (shown + used for mailto)
+  email: maregu.habtie@ku.ac.ae
 
 # ── Profile links (any left empty are hidden automatically) ───
 links:
@@ -81,4 +81,6 @@ exclude:
   - vendor/
   - .github/
   - _papers/
+  - assets/img/my_photos/
+  - my_CV_latex/
   - "Claude outputs/"

@@ -11,6 +11,7 @@
 - name: DyCON
   description: Dynamic uncertainty-aware consistency and contrastive learning for semi-supervised 3D medical image segmentation (CVPR 2025).
   tags: [Medical Imaging, Semi-Supervised]
+  repo: CVML-KU/DyCON
   links:
     project: https://dycon25.github.io/
     paper: https://arxiv.org/abs/2504.04566

@@ -12,3 +12,7 @@ Thumbs.db
 _papers/
 # Claude desktop app output folder
 Claude outputs/
+# original photos (only the cropped assets/img/profile.jpg is published)
+assets/img/my_photos/
+# private LaTeX CV sources (contain phone number and internal reports)
+my_CV_latex/

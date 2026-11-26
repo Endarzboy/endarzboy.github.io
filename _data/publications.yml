@@ -145,6 +145,7 @@
   links:
     pdf: https://openaccess.thecvf.com/content/CVPR2025/html/Assefa_DyCON_Dynamic_Uncertainty-aware_Consistency_and_Contrastive_Learning_for_Semi-supervised_Medical_CVPR_2025_paper.html
     arxiv: https://arxiv.org/abs/2504.04566
+    code: https://github.com/CVML-KU/DyCON
     project: https://dycon25.github.io/
     doi: https://doi.org/10.1109/CVPR52734.2025.02873
   bibtex: |

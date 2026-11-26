@@ -1,40 +1,84 @@
-# CV timeline shown on /cv/. Each section is a list of entries:
-#   when, what, where, detail (optional, Markdown allowed), link (optional)
-# Entries with an empty "what" are skipped.
-#
-# TODO (Maregu): please fill in the years and anything marked TODO.
+# ──────────────────────────────────────────────────────────────
+#  CV page (/cv/). Based on the Europass CV in my_CV_latex/.
+#  Each section: title, icon, items (when, what, where, detail, link).
+#  The full publication list comes from _data/cv_publications.yml
+#  (regenerate with: python3 tools/bib2cv.py my_CV_latex/cv_publications.bib).
+# ──────────────────────────────────────────────────────────────
 
-positions:
-  - when: "2024 – present"
-    what: Postdoctoral Fellow
-    where: Khalifa University, Abu Dhabi, UAE
-    detail: >-
-      Self-supervised and multi-modal representation learning for medical imaging; semi-supervised medical image
-      segmentation; 3D medical vision foundation models. Collaborations on a vision-based class attendance system,
-      baggage X-ray threat detection, and international benchmark challenges (SSBC 2025, SHREC'25).
+profile: >-
+  Postdoctoral researcher in medical image analysis and visual representation learning. My research areas
+  include self-supervised and semi-supervised learning, uncertainty-aware segmentation, multimodal AI,
+  and 3D medical image representations.
 
-education:
-  - when: "2023"
-    what: Ph.D.
-    where: University of Electronic Science and Technology of China (UESTC), Chengdu, China
-    detail: >-
-      Visual representation learning for video analysis: self-supervised and semi-supervised action recognition.
-      Advisor: [Wei Jiang](https://scholar.google.nl/citations?user=oT8Q87YAAAAJ&hl=en).
-  - when: "TODO"        # add the year
-    what: Master's degree   # TODO: e.g. "M.Sc. in Computer Science"
-    where: University of Electronic Science and Technology of China (UESTC), Chengdu, China
-  - when: ""
-    what: ""            # TODO: B.Sc. (optional)
-    where: ""
+impact:
+  as_of: October 2026
+  items:
+    - { label: "h-index (Google Scholar)", value: "11", link: "https://scholar.google.com/citations?user=XR6wzDQAAAAJ" }
+    - { label: "h-index (Scopus)", value: "9", link: "https://www.scopus.com/authid/detail.uri?authorId=57212172233" }
+    - { label: "FWCI as first author (Scopus)", value: "3.77" }
 
-awards:
-  - when: ""
-    what: ""            # TODO: e.g. scholarships, best paper awards
+sections:
+  - title: Positions
+    icon: briefcase
+    items:
+      - when: "Feb 2024 – Present"
+        what: Postdoctoral Fellow in Computer Science
+        where: Khalifa University, Abu Dhabi, UAE
+        detail: "Research focus: multimodal representation learning for medical diagnosis."
 
-service:
-  - when: ""
-    what: ""            # TODO: e.g. "Reviewer — CVPR, MICCAI, IEEE TMI, IEEE TMM"
+  - title: Education
+    icon: graduation-cap
+    items:
+      - when: "2019 – 2023"
+        what: Ph.D. in Software Engineering
+        where: University of Electronic Science and Technology of China (UESTC), Chengdu, China
+        detail: >-
+          Dissertation: *Deep Visual Representation Learning for Video Understanding*.
+          Advisor: [Wei Jiang](https://scholar.google.nl/citations?user=oT8Q87YAAAAJ&hl=en).
+      - when: "2017 – 2019"
+        what: M.Eng. in Software Engineering
+        where: University of Electronic Science and Technology of China (UESTC), Chengdu, China
+        detail: "Thesis: *Ethiopian Sign Language Recognition Based on Long-Term Recurrent Convolutional Networks*."
+      - when: "2012 – 2015"
+        what: B.Sc. in Software Engineering
+        where: Microlink Information Technology College, Ethiopia
+      - when: "2011 – 2014"
+        what: B.Sc. in Animal Production and Technology
+        where: Mekelle University, Ethiopia
 
-teaching:
-  - when: ""
-    what: ""            # TODO (optional)
+  - title: Research Supervision
+    icon: book-open
+    items:
+      - when: "2024 – Present"
+        what: PhD co-advising, Khalifa University
+        detail: >-
+          Co-advisor to three PhD researchers: **Mohammad Nabeel Alshurbaji** (MRI stroke and brain-lesion
+          segmentation), **Shijie Zeng** (3D medical visual question answering) and **Youssef Ibrahim**
+          (uncertainty-aware, label-efficient medical image classification).
+      - when: "2024 – 2026"
+        what: Undergraduate Senior Design Project (SDP) advisor, Khalifa University
+        detail: |
+          - Improving Robustness of a Real-Time Face Recognition System for Class Attendance (2025, 2026; SDP1 & SDP2)
+          - Classroom Occupancy Monitoring and Behavior Analysis System (2025)
+          - Automated People Recognition and Counting Using CCTV Cameras (2024)
+
+  - title: Research & Technical Projects
+    icon: code-xml
+    items:
+      - when: "Ongoing"
+        what: Real-Time Vision-Based Class Attendance System
+        where: Khalifa University · PI Prof. Naoufel Werghi
+        detail: "Role: developer, implementer and maintainer. Project organization: [github.com/CVML-KU](https://github.com/CVML-KU)."
+      - when: "2025"
+        what: International benchmark challenges
+        detail: Privacy-enhancing Sclera Segmentation Benchmarking Competition (SSBC 2025, IEEE IJCB) and the SHREC'25 track on multiple relief patterns.
+
+  - title: Awards & Honours
+    icon: award
+    items:
+      - what: ""            # e.g. scholarships, best paper awards
+
+  - title: Professional Service
+    icon: check
+    items:
+      - what: ""            # e.g. "Reviewer — CVPR, MICCAI, IEEE TMI, IEEE TMM"
