@@ -1,0 +1,38 @@
+---
+layout: page
+title: News & Events
+permalink: /news/
+description: News, papers, talks and upcoming events from Maregu Assefa.
+---
+{%- assign all_news = site.news | sort: "date" | reverse -%}
+{%- assign events = site.news | where: "category", "event" | sort: "date" -%}
+
+<section class="section" aria-labelledby="up-h">
+  <h2 id="up-h" class="section-title">Upcoming events</h2>
+  <ul class="events" data-events-upcoming>
+    {%- for e in events %}{% include event_item.html item=e %}{% endfor %}
+  </ul>
+  <p class="empty-state" data-events-none hidden>No upcoming events right now — check back soon.</p>
+</section>
+
+<section class="section" aria-labelledby="news-h">
+  <h2 id="news-h" class="section-title">News</h2>
+  {%- assign prev_year = "" -%}
+  {%- for n in all_news -%}
+    {%- if n.category == "event" -%}{%- continue -%}{%- endif -%}
+    {%- assign y = n.date | date: "%Y" -%}
+    {%- if y != prev_year -%}
+      {%- if prev_year != "" %}</ul>{% endif %}
+      <h3 class="year-label small">{{ y }}</h3>
+      <ul class="news">
+      {%- assign prev_year = y -%}
+    {%- endif %}
+      {% include news_item.html item=n %}
+  {%- endfor %}
+  {%- if prev_year != "" %}</ul>{% endif %}
+</section>
+
+<section class="section" data-past-section hidden aria-labelledby="past-h">
+  <h2 id="past-h" class="section-title">Past events</h2>
+  <ul class="events past" data-events-past></ul>
+</section>

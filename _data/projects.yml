@@ -1,0 +1,30 @@
+# Featured projects (shown as cards on /projects/). Your other public GitHub
+# repositories are listed automatically below them.
+- name: REFORM-3D
+  description: Representation-centric evaluation framework and Med3DINO encoders for 3D medical vision foundation models (NeurIPS 2026).
+  tags: [Medical Imaging, Foundation Models]
+  repo: Endarzboy/REFORM3D
+  links:
+    project: https://endarzboy.github.io/reform3d-website/
+    paper: https://arxiv.org/abs/2611.10062
+
+- name: DyCON
+  description: Dynamic uncertainty-aware consistency and contrastive learning for semi-supervised 3D medical image segmentation (CVPR 2025).
+  tags: [Medical Imaging, Semi-Supervised]
+  links:
+    project: https://dycon25.github.io/
+    paper: https://arxiv.org/abs/2504.04566
+
+- name: ActorSL
+  description: Official PyTorch implementation of actor-aware self-supervised learning for semi-supervised video representation learning (IEEE TCSVT 2023).
+  tags: [Video, Self-Supervised]
+  repo: Endarzboy/ActorSL
+  links:
+    paper: https://doi.org/10.1109/TCSVT.2023.3267178
+
+- name: Self-MLTP
+  description: Self-supervised multi-label transformation prediction for video representation learning (J. Circuits, Systems and Computers 2022).
+  tags: [Video, Self-Supervised]
+  repo: Endarzboy/Self_MLTP
+  links:
+    paper: https://doi.org/10.1142/S0218126622501596

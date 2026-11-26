@@ -1,0 +1,19 @@
+{%- assign e = include.item -%}
+{%- assign e_start = e.start | default: e.date -%}
+{%- assign e_end = e.end | default: e_start -%}
+<li class="event" data-start="{{ e_start | date: '%Y-%m-%d' }}" data-end="{{ e_end | date: '%Y-%m-%d' }}">
+  <div class="event-date" aria-hidden="true">
+    <span class="event-month">{{ e_start | date: "%b" }}</span>
+    <span class="event-day">{{ e_start | date: "%-d" }}</span>
+    <span class="event-year">{{ e_start | date: "%Y" }}</span>
+  </div>
+  <div class="event-body">
+    <h3 class="event-title">{% if e.link %}<a href="{{ e.link }}">{{ e.title }}</a>{% else %}{{ e.title }}{% endif %}</h3>
+    <p class="event-meta">
+      {% include icon.html name="calendar" %}
+      <span>{{ e_start | date: "%b %-d" }}{% if e_end != e_start %} – {{ e_end | date: "%b %-d" }}{% endif %}, {{ e_start | date: "%Y" }}</span>
+      {%- if e.location %}<span class="dot">·</span>{% include icon.html name="map-pin" %}<span>{{ e.location }}</span>{% endif %}
+    </p>
+    <div class="event-text">{{ e.content | markdownify }}</div>
+  </div>
+</li>

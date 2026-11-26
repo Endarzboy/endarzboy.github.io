@@ -1,0 +1,229 @@
+# ──────────────────────────────────────────────────────────────
+#  PUBLICATIONS — one entry per paper. Keep the list NEWEST FIRST:
+#  the site shows them in exactly this order.
+#
+#  Quickest way to add a paper:
+#     python3 tools/bib2yml.py --prepend     # paste a BibTeX entry, then Ctrl-D
+#
+#  Fields (title, authors, venue, year, type are required):
+#    id           short unique key (also the thumbnail file name)
+#    title, authors (list), venue (full name), year
+#    venue_short  text on the thumbnail badge, e.g. "CVPR"
+#    type         conference | journal | preprint | workshop
+#    note         optional highlight, e.g. "Oral", "Datasets & Benchmarks Track"
+#    selected     true → also shown on the home page
+#    thumbnail    image in assets/img/papers/ (first figure or architecture figure)
+#    links        pdf, arxiv, code, project   (doi is kept for reference, not shown)
+#    bibtex       BibTeX entry (shown with a copy button)
+# ──────────────────────────────────────────────────────────────
+
+- id: reform3d-2026
+  title: "REFORM-3D: A Representation-Centric Evaluation Framework for 3D Medical Vision Foundation Models"
+  authors: [Maregu Assefa, Muzammal Naseer, Divya Velayudhan, Gedamu Alemu Kumie, Naoufel Werghi]
+  venue: Advances in Neural Information Processing Systems (NeurIPS)
+  venue_short: NeurIPS
+  note: Evaluations & Datasets Track
+  year: 2026
+  type: conference
+  selected: true
+  thumbnail: /assets/img/papers/reform3d-2026.jpg
+  links:
+    pdf: https://arxiv.org/pdf/2611.10062
+    arxiv: https://arxiv.org/abs/2611.10062
+    code: https://github.com/Endarzboy/REFORM3D
+    project: https://endarzboy.github.io/reform3d-website/
+  bibtex: |
+    @inproceedings{assefa2026reform3d,
+      title     = {{REFORM-3D}: A Representation-Centric Evaluation Framework for {3D} Medical Vision Foundation Models},
+      author    = {Assefa, Maregu and Naseer, Muzammal and Velayudhan, Divya and Kumie, Gedamu Alemu and Werghi, Naoufel},
+      booktitle = {Advances in Neural Information Processing Systems (NeurIPS), Evaluations and Datasets Track},
+      year      = {2026}
+    }
+
+- id: icip-ambiguity-2026
+  title: "Learning from Ambiguity: Uncertainty-Weighted Consistency and Structure-aware Contrastive Objectives for Medical Image Segmentation"
+  authors: [Maregu Assefa, Divya Velayudhan, Muzammal Naseer, Kumie Gedamu, Iyyakutti Iyappan Ganapathi, Naoufel Werghi]
+  venue: IEEE International Conference on Image Processing (ICIP)
+  venue_short: ICIP
+  year: 2026
+  type: conference
+  selected: false
+  thumbnail: /assets/img/papers/icip-ambiguity-2026.jpg
+  links:
+    pdf: https://doi.org/10.1109/ICIP61757.2026.11630375
+    doi: https://doi.org/10.1109/ICIP61757.2026.11630375
+  bibtex: |
+    @inproceedings{assefa2026ambiguity,
+      title     = {Learning from Ambiguity: Uncertainty-Weighted Consistency and Structure-aware Contrastive Objectives for Medical Image Segmentation},
+      author    = {Assefa, Maregu and Velayudhan, Divya and Naseer, Muzammal and Gedamu, Kumie and Ganapathi, Iyyakutti Iyappan and Werghi, Naoufel},
+      booktitle = {IEEE International Conference on Image Processing (ICIP)},
+      pages     = {1--6},
+      year      = {2026},
+      doi       = {10.1109/ICIP61757.2026.11630375}
+    }
+
+- id: ducore-2026
+  title: "DUCore: Dual Uncertainty-Guided Consistency and Regional Contrastive Learning for Semi-Supervised Medical Image Segmentation"
+  authors: [Maregu Assefa, Muzammal Naseer, Kumie Gedamu, Iyyakutti Iyappan Ganapathi, Syed Sadaf Ali, Mohamed L. Seghier, Ernesto Damiani, Naoufel Werghi]
+  venue: IEEE Journal of Biomedical and Health Informatics (JBHI)
+  venue_short: IEEE JBHI
+  year: 2026
+  type: journal
+  selected: true
+  thumbnail: /assets/img/papers/ducore-2026.jpg
+  links:
+    pdf: https://doi.org/10.1109/JBHI.2026.3658836
+    doi: https://doi.org/10.1109/JBHI.2026.3658836
+  bibtex: |
+    @article{assefa2026ducore,
+      title   = {{DUCore}: Dual Uncertainty-Guided Consistency and Regional Contrastive Learning for Semi-Supervised Medical Image Segmentation},
+      author  = {Assefa, Maregu and Naseer, Muzammal and Gedamu, Kumie and Ganapathi, Iyyakutti Iyappan and Ali, Syed Sadaf and Seghier, Mohamed L. and Damiani, Ernesto and Werghi, Naoufel},
+      journal = {IEEE Journal of Biomedical and Health Informatics},
+      volume  = {30},
+      number  = {8},
+      pages   = {6732--6745},
+      year    = {2026},
+      doi     = {10.1109/JBHI.2026.3658836}
+    }
+
+- id: spike-ptsd-2026
+  title: "Spike-PTSD: A Bio-Plausible Adversarial Example Attack on Spiking Neural Networks via PTSD-Inspired Spike Scaling"
+  authors: [Lingxin Jin, Wei Jiang, Maregu Assefa, Letian Chen, Jinyu Zhan, Xingzhi Zhou, Lin Zuo, Naoufel Werghi]
+  venue: ACM/IEEE Design Automation Conference (DAC)
+  venue_short: DAC
+  year: 2026
+  type: conference
+  selected: false
+  thumbnail: /assets/img/papers/spike-ptsd-2026.jpg
+  links:
+    pdf: https://arxiv.org/pdf/2604.01750
+    arxiv: https://arxiv.org/abs/2604.01750
+    code: https://github.com/bluefier/Spike-PTSD
+    doi: https://doi.org/10.1145/3770743.3804164
+  bibtex: |
+    @inproceedings{jin2026spikeptsd,
+      title     = {{Spike-PTSD}: A Bio-Plausible Adversarial Example Attack on Spiking Neural Networks via {PTSD}-Inspired Spike Scaling},
+      author    = {Jin, Lingxin and Jiang, Wei and Assefa, Maregu and Chen, Letian and Zhan, Jinyu and Zhou, Xingzhi and Zuo, Lin and Werghi, Naoufel},
+      booktitle = {Proceedings of the 63rd ACM/IEEE Design Automation Conference (DAC)},
+      pages     = {1--7},
+      year      = {2026},
+      doi       = {10.1145/3770743.3804164}
+    }
+
+- id: trigan-siamt-2026
+  title: "TriGAN-SiaMT: A Triple-Segmentor Adversarial Network with Bounding Box Priors for Semi-Supervised Brain Lesion Segmentation"
+  authors: [Mohammad Alshurbaji, Maregu Assefa, Ahmad Obeid, Mohamed L. Seghier, Taimur Hassan, Kamal Taha, Naoufel Werghi]
+  venue: Pattern Recognition Letters
+  venue_short: PRL
+  year: 2026
+  type: journal
+  selected: false
+  thumbnail: /assets/img/papers/trigan-siamt-2026.jpg
+  links:
+    pdf: https://doi.org/10.1016/j.patrec.2025.11.032
+    doi: https://doi.org/10.1016/j.patrec.2025.11.032
+  bibtex: |
+    @article{alshurbaji2026trigan,
+      title   = {{TriGAN-SiaMT}: A triple-segmentor adversarial network with bounding box priors for semi-supervised brain lesion segmentation},
+      author  = {Alshurbaji, Mohammad and Assefa, Maregu and Obeid, Ahmad and Seghier, Mohamed L. and Hassan, Taimur and Taha, Kamal and Werghi, Naoufel},
+      journal = {Pattern Recognition Letters},
+      volume  = {200},
+      pages   = {37--43},
+      year    = {2026},
+      doi     = {10.1016/j.patrec.2025.11.032}
+    }
+
+- id: dycon-2025
+  title: "DyCON: Dynamic Uncertainty-aware Consistency and Contrastive Learning for Semi-supervised Medical Image Segmentation"
+  authors: [Maregu Assefa, Muzammal Naseer, Iyyakutti Iyappan Ganapathi, Syed Sadaf Ali, Mohamed L. Seghier, Naoufel Werghi]
+  venue: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  venue_short: CVPR
+  year: 2025
+  type: conference
+  selected: true
+  thumbnail: /assets/img/papers/dycon-2025.jpg
+  links:
+    pdf: https://openaccess.thecvf.com/content/CVPR2025/html/Assefa_DyCON_Dynamic_Uncertainty-aware_Consistency_and_Contrastive_Learning_for_Semi-supervised_Medical_CVPR_2025_paper.html
+    arxiv: https://arxiv.org/abs/2504.04566
+    project: https://dycon25.github.io/
+    doi: https://doi.org/10.1109/CVPR52734.2025.02873
+  bibtex: |
+    @inproceedings{assefa2025dycon,
+      title     = {{DyCON}: Dynamic Uncertainty-aware Consistency and Contrastive Learning for Semi-supervised Medical Image Segmentation},
+      author    = {Assefa, Maregu and Naseer, Muzammal and Ganapathi, Iyyakutti Iyappan and Ali, Syed Sadaf and Seghier, Mohamed L. and Werghi, Naoufel},
+      booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+      pages     = {30850--30860},
+      year      = {2025},
+      doi       = {10.1109/CVPR52734.2025.02873}
+    }
+
+- id: avcl-tmm-2024
+  title: "Audio-Visual Contrastive and Consistency Learning for Semi-Supervised Action Recognition"
+  authors: [Maregu Assefa, Wei Jiang, Jinyu Zhan, Kumie Gedamu, Getinet Yilma, Melese Ayalew, Deepak Adhikari]
+  venue: IEEE Transactions on Multimedia (TMM)
+  venue_short: IEEE TMM
+  year: 2024
+  type: journal
+  selected: true
+  thumbnail: /assets/img/papers/avcl-tmm-2024.jpg
+  links:
+    pdf: https://doi.org/10.1109/TMM.2023.3312856
+    doi: https://doi.org/10.1109/TMM.2023.3312856
+  bibtex: |
+    @article{assefa2024audiovisual,
+      title   = {Audio-Visual Contrastive and Consistency Learning for Semi-Supervised Action Recognition},
+      author  = {Assefa, Maregu and Jiang, Wei and Zhan, Jinyu and Gedamu, Kumie and Yilma, Getinet and Ayalew, Melese and Adhikari, Deepak},
+      journal = {IEEE Transactions on Multimedia},
+      volume  = {26},
+      pages   = {3491--3504},
+      year    = {2024},
+      doi     = {10.1109/TMM.2023.3312856}
+    }
+
+- id: actorsl-tcsvt-2023
+  title: "Actor-Aware Self-Supervised Learning for Semi-Supervised Video Representation Learning"
+  authors: [Maregu Assefa, Wei Jiang, Kumie Gedamu Alemu, Getinet Yilma, Deepak Adhikari, Melese Ayalew, Abegaz Mohammed Seid, Aiman Erbad]
+  venue: IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)
+  venue_short: IEEE TCSVT
+  year: 2023
+  type: journal
+  selected: true
+  thumbnail: /assets/img/papers/actorsl-tcsvt-2023.jpg
+  links:
+    pdf: https://doi.org/10.1109/TCSVT.2023.3267178
+    code: https://github.com/Endarzboy/ActorSL
+    doi: https://doi.org/10.1109/TCSVT.2023.3267178
+  bibtex: |
+    @article{assefa2023actor,
+      title   = {Actor-Aware Self-Supervised Learning for Semi-Supervised Video Representation Learning},
+      author  = {Assefa, Maregu and Jiang, Wei and Alemu, Kumie Gedamu and Yilma, Getinet and Adhikari, Deepak and Ayalew, Melese and Seid, Abegaz Mohammed and Erbad, Aiman},
+      journal = {IEEE Transactions on Circuits and Systems for Video Technology},
+      volume  = {33},
+      number  = {11},
+      pages   = {6679--6692},
+      year    = {2023},
+      doi     = {10.1109/TCSVT.2023.3267178}
+    }
+
+- id: scene-debias-tmm-2023
+  title: "Self-Supervised Scene-Debiasing for Video Representation Learning via Background Patching"
+  authors: [Maregu Assefa, Wei Jiang, Kumie Gedamu, Getinet Yilma, Bulbula Kumeda, Melese Ayalew]
+  venue: IEEE Transactions on Multimedia (TMM)
+  venue_short: IEEE TMM
+  year: 2023
+  type: journal
+  selected: false
+  thumbnail: /assets/img/papers/scene-debias-tmm-2023.jpg
+  links:
+    pdf: https://doi.org/10.1109/TMM.2022.3193559
+    doi: https://doi.org/10.1109/TMM.2022.3193559
+  bibtex: |
+    @article{assefa2023scene,
+      title   = {Self-Supervised Scene-Debiasing for Video Representation Learning via Background Patching},
+      author  = {Assefa, Maregu and Jiang, Wei and Gedamu, Kumie and Yilma, Getinet and Kumeda, Bulbula and Ayalew, Melese},
+      journal = {IEEE Transactions on Multimedia},
+      volume  = {25},
+      pages   = {5500--5515},
+      year    = {2023},
+      doi     = {10.1109/TMM.2022.3193559}
+    }

@@ -1,89 +1,140 @@
-# Academic Pages
-**Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
+# Maregu Assefa — personal academic website
 
-![Academic Pages template example](images/homepage.png "Academic Pages template example")
+A plain Jekyll site that GitHub Pages builds by itself. There's no theme to install and no build workflow to maintain.
+Live at **https://endarzboy.github.io** once it's published (see *Publish* below).
 
-# Getting Started
-
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
-
-See more info at https://academicpages.github.io/
-
-## Running locally
-
-When you are initially working on your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
-
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distribution and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    If you see error `Unable to locate package ruby-bundler`, `Unable to locate package nodejs `, run the following:
-    ```bash
-    sudo apt update && sudo apt upgrade -y
-    ```
-    then try run `sudo apt install ruby-dev ruby-bundler nodejs` again.
-
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-
-    If you see file permission error like `Fetching bundler-2.6.3.gem ERROR:  While executing gem (Gem::FilePermissionError) You don't have write permissions for the /var/lib/gems/3.2.0 directory.` or `Bundler::PermissionError: There was an error while trying to write to /usr/local/bin.`
-    Install Gems Locally (Recommended):
-    ```bash
-    bundle config set --local path 'vendor/bundle'
-    ```
-    then try run `bundle install` again. If succeeded, you should see a folder called `vendor` and open `.gitignore` then add `vendor` inside it.
-
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
-    You may also try `bundle exec jekyll serve -l -H localhost` to ensure jekyll to use specific dependencies on your own local machine.
-
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
-
-## Using Docker
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-You can build and execute the container by running the following command in the repository:
-
-```bash
-docker compose up
+```
+_config.yml              ← name, title, email, profile links, navigation
+index.md                 ← home page bio + research-interest tags
+_data/publications.yml   ← ALL publications (newest first)
+_news/                   ← one small .md file per news item or event
+_data/projects.yml       ← featured project cards
+_data/cv.yml             ← CV timeline (positions, education, awards, service)
+assets/img/              ← profile photo, favicon
+assets/cv/               ← put your CV PDF here
+tools/bib2yml.py         ← BibTeX → publication entry converter
 ```
 
-You should now be able to access the website from `localhost:4000`.
+---
 
-# Maintenance
+## Everyday updates
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+You can do all of these straight on github.com: open the file, click ✏️, edit, then **Commit changes**.
+The site updates about a minute later.
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
+### Add a publication
 
-## Bugfixes and enhancements
+**Option A — from BibTeX (fastest).** On Google Scholar click **Cite → BibTeX** under the paper, copy it, then:
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
+```bash
+python3 tools/bib2yml.py --prepend      # paste the BibTeX, then Ctrl-D (Windows: Ctrl-Z, Enter)
+```
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+This inserts a ready entry at the top of `_data/publications.yml`. The PDF button is filled from the DOI/arXiv;
+add `code`/`project` links and `selected: true` (to show it on the home page) if you like.
+
+**Option B — by hand.** Copy the top entry of `_data/publications.yml` and edit it:
+
+```yaml
+- id: mypaper-2027                 # unique; also the thumbnail file name
+  title: "My New Paper"
+  authors: [Maregu Assefa, Co Author, Naoufel Werghi]
+  venue: Medical Image Computing and Computer Assisted Intervention (MICCAI)
+  venue_short: MICCAI              # text on the thumbnail badge
+  note: Oral                       # optional highlight
+  year: 2027
+  type: conference                 # conference | journal | preprint | workshop
+  selected: true                   # also show on the home page
+  thumbnail: /assets/img/papers/mypaper-2027.jpg
+  links:
+    pdf: https://arxiv.org/pdf/...  # or the publisher/DOI page
+    arxiv: https://arxiv.org/abs/...
+    code: https://github.com/Endarzboy/...
+    project: https://...
+  bibtex: |
+    @inproceedings{...}
+```
+
+**Thumbnail:** save the paper's first figure or main architecture figure as
+`assets/img/papers/<id>.jpg` (about 1200–1400 px wide; white background works best).
+Without one, a neat placeholder with the venue name is shown. Visitors can click a thumbnail to enlarge it.
+
+Keep the list **newest first** — the site shows papers in file order. Your name is bolded automatically
+(variants are listed under `self_names` in `_config.yml`).
+
+### Add a news item
+
+Create a file in `_news/` named `YYYY-MM-DD-short-name.md`:
+
+```markdown
+---
+title: Paper accepted at MICCAI 2027
+date: 2027-06-15
+category: paper          # paper | award | talk | news
+---
+Our paper **XYZ** is accepted at **MICCAI 2027**. [Preprint](https://arxiv.org/abs/...)
+```
+
+The home page shows the latest 6 (`home.news_count` in `_config.yml`). The News page shows all of them, grouped by year.
+
+### Add an event (talk, conference, workshop)
+
+Same as a news item, but with `category: event` and dates:
+
+```markdown
+---
+title: Invited talk at XYZ Workshop
+date: 2027-03-10
+category: event
+start: 2027-03-10
+end: 2027-03-11          # optional, for multi-day events
+location: Abu Dhabi, UAE
+link: https://...        # optional
+---
+Talking about label-efficient medical image segmentation.
+```
+
+Events whose end date hasn't passed appear under **Upcoming** on the home and News pages. After the date passes they
+move to **Past events** automatically. The check runs in the visitor's browser, so you never need to edit or rebuild.
+
+### Other updates
+
+| What | Where |
+|---|---|
+| Profile photo | Add `assets/img/profile.jpg` (square, ≥ 400 px), then set `author.avatar: /assets/img/profile.jpg` in `_config.yml` |
+| Email / ResearchGate / X | `_config.yml` → `author.email`, `links.researchgate`, `links.twitter` (empty values are hidden) |
+| CV PDF | Put it in `assets/cv/` and set `cv_pdf: /assets/cv/<file>.pdf` |
+| Bio and interest tags | `index.md` |
+| Featured projects | `_data/projects.yml` (other GitHub repos are listed automatically; hide some with `github_exclude`) |
+| CV timeline | `_data/cv.yml` |
+| Colours and fonts | Top of `assets/css/main.css` (`--accent`, `--bg`, …; the dark theme is below them) |
 
 ---
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
 
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+## Publish on GitHub Pages (one-time)
+
+1. Create a **public** repository named exactly **`Endarzboy.github.io`** on GitHub.
+   (Your `reform3d-website` project page keeps working at `/reform3d-website/`, so don't add a folder with that name here.)
+2. Upload the contents of this folder. Either drag and drop the files into **Add file → Upload files**, or run:
+   ```bash
+   git init && git add . && git commit -m "Initial site"
+   git branch -M main
+   git remote add origin https://github.com/Endarzboy/Endarzboy.github.io.git
+   git push -u origin main
+   ```
+3. In the repo, go to **Settings → Pages → Build and deployment**, set **Source: Deploy from a branch**, then pick **Branch: `main` / `(root)`**.
+4. After 1–2 minutes the site is live at https://endarzboy.github.io.
+
+## Preview locally (optional)
+
+This needs Ruby (on Windows, use RubyInstaller with the DevKit):
+
+```bash
+bundle install
+bundle exec jekyll serve --livereload     # open http://localhost:4000
+```
+
+---
+
+Icons: [Lucide](https://lucide.dev) (ISC) and [Simple Icons](https://simpleicons.org) (CC0).
+Fonts: Inter and Source Serif 4 (SIL OFL), self-hosted in `assets/fonts/`.

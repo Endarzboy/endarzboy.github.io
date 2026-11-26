@@ -1,13 +1,14 @@
-# Ignore the contents of the _site directory and other cache directories
 _site/
 .sass-cache/
-
-# Ignore the directory for local files during development
-local/
-
-# Ignore the Gemfile that is generated
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.bundle/
 Gemfile.lock
+.DS_Store
+Thumbs.db
 
-# Ingore files created by npm
-node_modules
-package-lock.json
+# private paper PDFs used to make thumbnails
+_papers/
+# Claude desktop app output folder
+Claude outputs/

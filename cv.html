@@ -1,0 +1,43 @@
+---
+layout: page
+title: Curriculum Vitae
+permalink: /cv/
+description: Curriculum vitae of Maregu Assefa — positions, education, publications and service.
+---
+{%- if site.cv_pdf and site.cv_pdf != "" %}
+<p><a class="btn" href="{{ site.cv_pdf | relative_url }}">{% include icon.html name="file-text" %} Download full CV (PDF)</a></p>
+{%- endif %}
+
+{%- assign sections = "positions:Positions:briefcase,education:Education:graduation-cap,awards:Awards & Honours:award,service:Professional Service:check,teaching:Teaching:book-open" | split: "," -%}
+{%- for s in sections -%}
+  {%- assign parts = s | split: ":" -%}
+  {%- assign key = parts[0] -%}
+  {%- assign icon_name = parts[2] -%}
+  {%- assign items = site.data.cv[key] -%}
+  {%- assign has = false -%}
+  {%- for it in items -%}{%- if it.what and it.what != "" -%}{%- assign has = true -%}{%- endif -%}{%- endfor -%}
+  {%- if has %}
+<section class="section cv-section" aria-labelledby="cv-{{ key }}">
+  <h2 id="cv-{{ key }}" class="section-title with-icon">{% include icon.html name=icon_name %}{{ parts[1] }}</h2>
+  <ol class="timeline">
+    {%- for it in items -%}
+      {%- if it.what and it.what != "" %}
+    <li>
+      <span class="tl-when">{% unless it.when contains "TODO" %}{{ it.when }}{% endunless %}</span>
+      <div class="tl-body">
+        <p class="tl-what">{% if it.link %}<a href="{{ it.link }}">{{ it.what }}</a>{% else %}{{ it.what }}{% endif %}</p>
+        {%- if it.where and it.where != "" %}<p class="tl-where">{{ it.where }}</p>{% endif %}
+        {%- if it.detail %}<div class="tl-detail">{{ it.detail | markdownify }}</div>{% endif %}
+      </div>
+    </li>
+      {%- endif -%}
+    {%- endfor %}
+  </ol>
+</section>
+  {%- endif -%}
+{%- endfor %}
+
+<section class="section cv-section" aria-labelledby="cv-pubs">
+  <h2 id="cv-pubs" class="section-title with-icon">{% include icon.html name="book-open" %}Selected Publications</h2>
+  <p>See the <a href="{{ '/publications/' | relative_url }}">publications page</a> ({{ site.data.publications.size }} papers) or <a href="{{ site.links.scholar }}">Google Scholar</a>.</p>
+</section>

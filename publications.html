@@ -1,0 +1,30 @@
+---
+layout: page
+title: Publications
+permalink: /publications/
+description: Peer-reviewed publications by Maregu Assefa on medical image analysis, self-/semi-supervised learning and video understanding.
+---
+{%- assign pubs = site.data.publications -%}
+
+<p class="page-intro">
+  Selected peer-reviewed work. <strong class="me">Bold</strong> marks me. Click a figure to enlarge it.
+  For the complete list, see
+  <a href="{{ site.links.scholar }}">Google Scholar</a>{% if site.links.orcid and site.links.orcid != "" %} or <a href="{{ site.links.orcid }}">ORCID</a>{% endif %}.
+</p>
+
+<div class="pub-controls" data-pub-controls>
+  <div class="filter-row" role="group" aria-label="Filter publications">
+    <button class="filter active" type="button" data-filter-type="all">All</button>
+    <button class="filter" type="button" data-filter-type="conference">Conference</button>
+    <button class="filter" type="button" data-filter-type="journal">Journal</button>
+    <button class="filter" type="button" data-filter-type="preprint">Preprint</button>
+    <button class="filter filter-star" type="button" data-filter-selected aria-pressed="false">{% include icon.html name="star" %}Selected</button>
+  </div>
+</div>
+
+<ol class="pubs" data-pub-list>
+  {%- for p in pubs %}
+  {% include pub_entry.html pub=p %}
+  {%- endfor %}
+</ol>
+<p class="empty-state" data-pub-empty hidden>No publications match this filter.</p>

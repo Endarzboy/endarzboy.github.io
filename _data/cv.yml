@@ -1,0 +1,40 @@
+# CV timeline shown on /cv/. Each section is a list of entries:
+#   when, what, where, detail (optional, Markdown allowed), link (optional)
+# Entries with an empty "what" are skipped.
+#
+# TODO (Maregu): please fill in the years and anything marked TODO.
+
+positions:
+  - when: "2024 – present"
+    what: Postdoctoral Fellow
+    where: Khalifa University, Abu Dhabi, UAE
+    detail: >-
+      Self-supervised and multi-modal representation learning for medical imaging; semi-supervised medical image
+      segmentation; 3D medical vision foundation models. Collaborations on a vision-based class attendance system,
+      baggage X-ray threat detection, and international benchmark challenges (SSBC 2025, SHREC'25).
+
+education:
+  - when: "2023"
+    what: Ph.D.
+    where: University of Electronic Science and Technology of China (UESTC), Chengdu, China
+    detail: >-
+      Visual representation learning for video analysis: self-supervised and semi-supervised action recognition.
+      Advisor: [Wei Jiang](https://scholar.google.nl/citations?user=oT8Q87YAAAAJ&hl=en).
+  - when: "TODO"        # add the year
+    what: Master's degree   # TODO: e.g. "M.Sc. in Computer Science"
+    where: University of Electronic Science and Technology of China (UESTC), Chengdu, China
+  - when: ""
+    what: ""            # TODO: B.Sc. (optional)
+    where: ""
+
+awards:
+  - when: ""
+    what: ""            # TODO: e.g. scholarships, best paper awards
+
+service:
+  - when: ""
+    what: ""            # TODO: e.g. "Reviewer — CVPR, MICCAI, IEEE TMI, IEEE TMM"
+
+teaching:
+  - when: ""
+    what: ""            # TODO (optional)

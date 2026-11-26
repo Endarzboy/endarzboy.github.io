@@ -1,0 +1,7 @@
+{%- assign n = include.item -%}
+<li class="news-item cat-{{ n.category | default: 'news' }}">
+  <time datetime="{{ n.date | date: '%Y-%m-%d' }}">{{ n.date | date: "%b %Y" }}</time>
+  <div class="news-body">
+    {{ n.content | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+  </div>
+</li>

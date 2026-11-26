@@ -1,0 +1,39 @@
+{%- assign p = include.pub -%}
+{%- assign main_link = p.links.project | default: p.links.pdf | default: p.links.arxiv | default: p.links.doi -%}
+<li class="pub" id="{{ p.id }}"
+    data-type="{{ p.type | default: 'conference' }}"
+    data-selected="{% if p.selected %}true{% else %}false{% endif %}">
+  <div class="pub-thumb{% unless p.thumbnail and p.thumbnail != "" %} no-img{% endunless %}">
+    {%- if p.thumbnail and p.thumbnail != "" %}
+    <button class="thumb-btn" type="button" data-zoom="{{ p.thumbnail | relative_url }}" aria-label="Enlarge figure: {{ p.title | escape }}">
+      <img src="{{ p.thumbnail | relative_url }}" alt="Main figure of {{ p.title | escape }}" loading="lazy" decoding="async">
+    </button>
+    {%- else %}
+    <span class="thumb-placeholder" aria-hidden="true">{{ p.venue_short | default: p.type }}</span>
+    {%- endif %}
+    <span class="pub-badge type-{{ p.type | default: 'conference' }}">{{ p.venue_short | default: p.type }}</span>
+  </div>
+  <div class="pub-body">
+    <h3 class="pub-title">{% if main_link %}<a href="{{ main_link }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+    <p class="pub-authors">
+      {%- for au in p.authors -%}
+        {%- if site.self_names contains au -%}<strong class="me">{{ au }}</strong>{%- else -%}{{ au }}{%- endif -%}
+        {%- unless forloop.last -%}, {% endunless -%}
+      {%- endfor -%}
+    </p>
+    <p class="pub-venue"><em>{{ p.venue }}</em>, {{ p.year }}{% if p.note %}<span class="pub-note">{{ p.note }}</span>{% endif %}</p>
+    <div class="pub-links">
+      {%- if p.links.pdf %}<a class="chip" href="{{ p.links.pdf }}">{% include icon.html name="file-text" %}PDF</a>{% endif -%}
+      {%- if p.links.arxiv %}<a class="chip" href="{{ p.links.arxiv }}">{% include icon.html name="book-open" %}arXiv</a>{% endif -%}
+      {%- if p.links.code %}<a class="chip" href="{{ p.links.code }}">{% include icon.html name="code-xml" %}Code</a>{% endif -%}
+      {%- if p.links.project %}<a class="chip" href="{{ p.links.project }}">{% include icon.html name="globe" %}Project</a>{% endif -%}
+      {%- if p.bibtex %}<button class="chip chip-btn" type="button" data-toggle-bib aria-expanded="false">{% include icon.html name="quote" %}BibTeX</button>{% endif -%}
+    </div>
+    {%- if p.bibtex %}
+    <div class="pub-bib" hidden>
+      <pre><code>{{ p.bibtex | strip | xml_escape }}</code></pre>
+      <button class="copy-btn" type="button" data-copy-bib>{% include icon.html name="copy" %}<span>Copy</span></button>
+    </div>
+    {%- endif %}
+  </div>
+</li>
