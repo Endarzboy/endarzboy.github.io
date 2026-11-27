@@ -141,9 +141,24 @@
       var excluded = (gh.dataset.ghExclude || '').toLowerCase().split(',').filter(Boolean);
       // star counts on featured cards
       $$('[data-repo]').forEach(function (card) {
-        var r = repos.filter(function (x) { return x.full_name.toLowerCase() === card.dataset.repo.toLowerCase(); })[0];
+        var full = card.dataset.repo;
         var s = $('[data-stats]', card);
-        if (r && s) { $('[data-stars]', s).textContent = r.stargazers_count; s.removeAttribute('hidden'); }
+        if (!s) return;
+        var show = function (n) { $('[data-stars]', s).textContent = n; s.removeAttribute('hidden'); };
+        var r = repos.filter(function (x) { return x.full_name.toLowerCase() === full.toLowerCase(); })[0];
+        if (r) { show(r.stargazers_count); return; }
+        // Repos owned by others (e.g. an organization like CVML-KU): look them up individually.
+        var ck = 'gh-repo-' + full, c = null;
+        try { c = JSON.parse(sessionStorage.getItem(ck) || 'null'); } catch (e) {}
+        if (c) { show(c); return; }
+        fetch('https://api.github.com/repos/' + full)
+          .then(function (res) { return res.ok ? res.json() : null; })
+          .then(function (d) {
+            if (!d || typeof d.stargazers_count !== 'number') return;
+            try { sessionStorage.setItem(ck, JSON.stringify(d.stargazers_count)); } catch (e) {}
+            show(d.stargazers_count);
+          })
+          .catch(function () {});
       });
       var list = $('[data-gh-list]', gh);
       var rest = repos.filter(function (r) {
