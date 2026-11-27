@@ -27,6 +27,13 @@
   year: "2026"
   status: published
   link: https://doi.org/10.1109/icip61757.2026.11630375
+- key: jin2026spike
+  title: "Spike-PTSD: A Bio-Plausible Adversarial Example Attack on Spiking Neural Networks via PTSD-Inspired Spike Scaling"
+  authors: ["Lingxin Jin", "Wei Jiang", "Maregu Assefa", "Letian Chen", "Jinyu Zhan", "Xingzhi Zhou", "Lin Zuo", "Naoufel Werghi"]
+  venue: "Proceedings of the 63rd ACM/IEEE Design Automation Conference (DAC), pp. 1–7"
+  year: "2026"
+  status: published
+  link: https://doi.org/10.1145/3770743.3804164
 - key: alshurbaji2025trigan
   title: "TriGAN-SiaMT: A triple-segmentor adversarial network with bounding box priors for semi-supervised brain lesion segmentation"
   authors: ["Mohammad Alshurbaji", "Maregu Assefa", "Ahmad Obeid", "Mohamed L. Seghier", "Taimur Hassan", "Kamal Taha", "Naoufel Werghi"]
@@ -76,6 +83,13 @@
   year: "2025"
   status: published
   link: https://doi.org/10.1109/access.2025.3571760
+- key: ganapathi2025flare
+  title: "FLARE: Flare Analysis and Regression-based Estimation"
+  authors: ["Iyyakutti Iyappan Ganapathi", "Fares Ossama Abdelhafez", "Divya Velayudhan", "Maregu Assefa Habtie", "Hamad Karki", "Khalid Yousef Al Awadhi", "Jorge Dias", "Naoufel Werghi"]
+  venue: "2025 IEEE International Conference on Advances in Data-Driven Analytics and Intelligent Systems (ADACIS), pp. 1–6"
+  year: "2025"
+  status: published
+  link: https://doi.org/10.1109/ADACIS65663.2025.11437182
 - key: vitek2025ssbc
   title: "Privacy-enhancing Sclera Segmentation Benchmarking Competition: SSBC 2025"
   authors: ["Matej Vitek", "Darian Tomašević", "Abhijit Das", "…", "Maregu Assefa", "et al."]

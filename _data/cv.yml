@@ -11,11 +11,13 @@ profile: >-
   and 3D medical image representations.
 
 impact:
-  as_of: October 2026
+  as_of: November 2026
   items:
-    - { label: "h-index (Google Scholar)", value: "11", link: "https://scholar.google.com/citations?user=XR6wzDQAAAAJ" }
-    - { label: "h-index (Scopus)", value: "9", link: "https://www.scopus.com/authid/detail.uri?authorId=57212172233" }
-    - { label: "FWCI as first author (Scopus)", value: "3.77" }
+    - { label: "h-index · Google Scholar", value: "11", link: "https://scholar.google.com/citations?user=XR6wzDQAAAAJ" }
+    - { label: "Citations · Google Scholar", value: "450", link: "https://scholar.google.com/citations?user=XR6wzDQAAAAJ" }
+    - { label: "h-index · Scopus", value: "10", link: "https://www.scopus.com/authid/detail.uri?authorId=57212172233" }
+    - { label: "Citations · Scopus", value: "323", link: "https://www.scopus.com/authid/detail.uri?authorId=57212172233" }
+    - { label: "FWCI · Scopus", value: "1.94", link: "https://www.scopus.com/authid/detail.uri?authorId=57212172233" }
 
 sections:
   - title: Positions

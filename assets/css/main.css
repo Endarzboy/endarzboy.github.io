@@ -374,7 +374,7 @@ strong { font-weight: 600; }
 /* ---------- CV extras ---------- */
 .cv-intro { margin-bottom: 28px; }
 .cv-intro .page-intro { margin-bottom: 14px; }
-.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 12px; }
 .stat { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
 .stat-value { font-family: var(--font-serif); font-size: 1.7rem; font-weight: 600; color: var(--accent); line-height: 1.1; }
 .stat-label { font-size: .84rem; color: var(--text-2); }
