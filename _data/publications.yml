@@ -22,7 +22,7 @@
   authors: [Maregu Assefa, Muzammal Naseer, Divya Velayudhan, Gedamu Alemu Kumie, Naoufel Werghi]
   venue: Advances in Neural Information Processing Systems (NeurIPS)
   venue_short: NeurIPS
-  note: Evaluations & Datasets Track
+  # note: Evaluations & Datasets Track
   year: 2026
   type: conference
   selected: true

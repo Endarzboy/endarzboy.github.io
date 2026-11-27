@@ -1,9 +1,9 @@
 ---
 title: NeurIPS 2026 — Paris
-date: 2026-12-08
+date: 2026-12-09
 category: event
-start: 2026-12-08
-end: 2026-12-14
+start: 2026-12-09
+end: 2026-12-13
 location: Paris, France
 link: https://neurips.cc/
 ---
